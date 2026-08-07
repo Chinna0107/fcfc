@@ -43,55 +43,65 @@ export default function App() {
     <>
       <AnimationProvider />
       <ScrollToTop />
-      {!hideShell && <Navbar />}
-      <Suspense fallback={<div />}>
+      <Suspense fallback={
+        !hideShell ? (
+          <>
+            <Navbar />
+            <div style={{ minHeight: '60vh' }} />
+            <Footer />
+          </>
+        ) : <div />
+      }>
         <AnimatePresence mode="wait">
           {!hideShell ? (
-            <motion.div
-              key={location.pathname}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.24, ease: 'easeOut' }}
-            >
-              <Routes location={location}>
-                <Route path="/"                  element={<PageShell><Home /></PageShell>} />
-                <Route path="/about"             element={<PageShell><About /></PageShell>} />
-                <Route path="/faq"               element={<PageShell><FAQ /></PageShell>} />
-                <Route path="/how-it-works"      element={<PageShell><FAQ /></PageShell>} />
-                <Route path="/contact"           element={<PageShell><Contact /></PageShell>} />
-                <Route path="/links"             element={<PageShell><Links /></PageShell>} />
-                <Route path="/gallery"           element={<PageShell><Gallery /></PageShell>} />
-                <Route path="/presentations"     element={<PageShell><Presentations /></PageShell>} />
-                <Route path="/coupon/about"      element={<PageShell><AboutCoupon /></PageShell>} />
-                <Route path="/coupon/generate"   element={<PageShell><GenerateCoupon /></PageShell>} />
-                <Route path="/coupon/submit"     element={<PageShell><SubmitCoupon /></PageShell>} />
-                <Route path="/coupon/renew"      element={<PageShell><RenewCoupon /></PageShell>} />
-                <Route path="/coupon/search"     element={<PageShell><SearchCoupon /></PageShell>} />
-                <Route path="/coupon/success"     element={<PageShell><CouponSuccess /></PageShell>} />
-                <Route path="/thank-you"         element={<PageShell><ThankYou /></PageShell>} />
-              </Routes>
-            </motion.div>
+            <>
+              <Navbar />
+              <motion.div
+                key={location.pathname}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.24, ease: 'easeOut' }}
+              >
+                <Routes location={location}>
+                  <Route path="/"                  element={<PageShell><Home /></PageShell>} />
+                  <Route path="/about"             element={<PageShell><About /></PageShell>} />
+                  <Route path="/faq"               element={<PageShell><FAQ /></PageShell>} />
+                  <Route path="/how-it-works"      element={<PageShell><FAQ /></PageShell>} />
+                  <Route path="/contact"           element={<PageShell><Contact /></PageShell>} />
+                  <Route path="/links"             element={<PageShell><Links /></PageShell>} />
+                  <Route path="/gallery"           element={<PageShell><Gallery /></PageShell>} />
+                  <Route path="/presentations"     element={<PageShell><Presentations /></PageShell>} />
+                  <Route path="/coupon/about"      element={<PageShell><AboutCoupon /></PageShell>} />
+                  <Route path="/coupon/generate"   element={<PageShell><GenerateCoupon /></PageShell>} />
+                  <Route path="/coupon/submit"     element={<PageShell><SubmitCoupon /></PageShell>} />
+                  <Route path="/coupon/renew"      element={<PageShell><RenewCoupon /></PageShell>} />
+                  <Route path="/coupon/search"     element={<PageShell><SearchCoupon /></PageShell>} />
+                  <Route path="/coupon/success"    element={<PageShell><CouponSuccess /></PageShell>} />
+                  <Route path="/thank-you"         element={<PageShell><ThankYou /></PageShell>} />
+                </Routes>
+              </motion.div>
+              <Footer />
+              <BottomNav />
+            </>
           ) : (
             <Routes location={location}>
-              <Route path="/admin/login"          element={<AdminLogin />} />
-              <Route path="/admin"                element={<AdminDashboard />} />
+              <Route path="/admin/login"              element={<AdminLogin />} />
+              <Route path="/admin"                    element={<AdminDashboard />} />
               <Route path="/admin/all-coupons"        element={<AdminAllCoupons />} />
               <Route path="/admin/all-coupons/:code"  element={<AdminCouponDetail />} />
-              <Route path="/admin/coupons"             element={<AdminCoupons />} />
-              <Route path="/admin/submitted"      element={<AdminSubmitted />} />
-              <Route path="/admin/renewed"        element={<AdminRenewed />} />
-              <Route path="/admin/revenue"        element={<AdminRevenue />} />
-              <Route path="/admin/users"          element={<AdminUsers />} />
-              <Route path="/admin/gallery"        element={<AdminGallery />} />
-              <Route path="/admin/links"          element={<AdminLinks />} />
-              <Route path="/admin/presentations"  element={<AdminPresentations />} />
+              <Route path="/admin/coupons"            element={<AdminCoupons />} />
+              <Route path="/admin/submitted"          element={<AdminSubmitted />} />
+              <Route path="/admin/renewed"            element={<AdminRenewed />} />
+              <Route path="/admin/revenue"            element={<AdminRevenue />} />
+              <Route path="/admin/users"              element={<AdminUsers />} />
+              <Route path="/admin/gallery"            element={<AdminGallery />} />
+              <Route path="/admin/links"              element={<AdminLinks />} />
+              <Route path="/admin/presentations"      element={<AdminPresentations />} />
             </Routes>
           )}
         </AnimatePresence>
       </Suspense>
-      {!hideShell && <Footer />}
-      {!hideShell && <BottomNav />}
     </>
   )
 }

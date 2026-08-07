@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { Link } from 'react-router-dom'
 import { Ticket, Users, TrendingUp, Globe, Zap, Shield, ArrowRight, Star } from 'lucide-react'
 import './Projects.css'
@@ -53,7 +54,7 @@ export default function Projects() {
     <main>
       <div className="page-header">
         <h1>Explore Projects</h1>
-        <p>Discover active Fortune Crowd Fund Coupon cycles and join the growing FCFC ecosystem.</p>
+        <p><TypeAnimation sequence={['Discover active Fortune Crowd Fund Coupon cycles and join the growing FCFC ecosystem.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       {/* Stats */}

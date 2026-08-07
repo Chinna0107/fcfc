@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { Ticket, Send, RefreshCw, Search, DollarSign, ShieldCheck, Clock, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import coinImg from '../assets/coin.png'
@@ -23,7 +24,7 @@ export default function AboutCoupon() {
     <main>
       <div className="page-header">
         <h1>About FCFC Coupon</h1>
-        <p>Everything you need to know about Fortune Crowd Fund Coupons.</p>
+        <p><TypeAnimation sequence={['Everything you need to know about Fortune Crowd Fund Coupons.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

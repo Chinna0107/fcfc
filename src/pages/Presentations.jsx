@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState, useEffect } from 'react'
 import { Play, FileText } from 'lucide-react'
 import './Presentations.css'
@@ -26,7 +27,7 @@ export default function Presentations() {
     <main>
       <div className="page-header">
         <h1>Presentations</h1>
-        <p>Watch our official FCFC video presentations and learn how the platform works.</p>
+        <p><TypeAnimation sequence={['Watch our official FCFC video presentations and learn how the platform works.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

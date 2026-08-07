@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Ticket, ChevronRight, ChevronLeft, Copy, Check, Loader } from 'lucide-react'
@@ -61,7 +62,7 @@ export default function GenerateCoupon() {
     <main>
       <div className="page-header">
         <h1>Generate Coupon</h1>
-        <p>Create a new blockchain-verified coupon in 3 easy steps.</p>
+        <p><TypeAnimation sequence={['Create a new blockchain-verified coupon in 3 easy steps.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

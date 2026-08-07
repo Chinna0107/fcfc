@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { Search, Ticket, CheckCircle, XCircle, Clock, Loader } from 'lucide-react'
 import './SearchCoupon.css'
@@ -40,7 +41,7 @@ export default function SearchCoupon() {
     <main>
       <div className="page-header">
         <h1>Search Coupon</h1>
-        <p>Find and verify any coupon on the FCFC network.</p>
+        <p><TypeAnimation sequence={['Find and verify any coupon on the FCFC network.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

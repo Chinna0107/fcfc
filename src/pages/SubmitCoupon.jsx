@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Send, ChevronRight, ChevronLeft, Check, Loader, Copy, CheckCircle } from 'lucide-react'
@@ -67,7 +68,7 @@ export default function SubmitCoupon() {
       <main>
         <div className="page-header">
           <h1>Submit Coupon</h1>
-          <p>Submit an existing coupon code for verification and redemption.</p>
+          <p><TypeAnimation sequence={['Submit an existing coupon code for verification and redemption.', 4000]} speed={55} repeat={Infinity} /></p>
         </div>
         <section className="section">
           <div className="page-wrapper">
@@ -101,7 +102,7 @@ export default function SubmitCoupon() {
     <main>
       <div className="page-header">
         <h1>Submit Coupon</h1>
-        <p>Submit an existing coupon code for verification and redemption.</p>
+        <p><TypeAnimation sequence={['Submit an existing coupon code for verification and redemption.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

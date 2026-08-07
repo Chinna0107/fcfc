@@ -1,5 +1,16 @@
+import { TypeAnimation } from 'react-type-animation'
+import CountUpModule from 'react-countup'
 import { useState, useEffect } from 'react'
 import { ExternalLink, GitBranch, Share2, Globe, BookOpen, MessageCircle, Video, FileText, Users, Zap, Star, ArrowRight } from 'lucide-react'
+
+const CountUp = CountUpModule.default ?? CountUpModule
+
+const stats = [
+  { icon: <Users size={20} />, end: 38, suffix: 'K+', label: 'Community Members', color: '#4A90D9' },
+  { icon: <Globe size={20} />, end: 150, suffix: '+',  label: 'Countries',         color: '#6C63FF' },
+  { icon: <Star size={20} />,  end: 5,   suffix: 'K+', label: 'Discord Members',   color: '#27ae60' },
+  { icon: <Zap size={20} />,   end: 99.9, suffix: '%', decimals: 1, label: 'Uptime', color: '#e67e22' },
+]
 import { Link } from 'react-router-dom'
 import './Links.css'
 
@@ -23,12 +34,7 @@ const developer = [
   { icon: <Globe size={24} />,     title: 'Status Page',    desc: 'Real-time platform uptime and incident reports.',   href: '#', color: '#27ae60' },
 ]
 
-const stats = [
-  { icon: <Users size={20} />, number: '38K+',  label: 'Community Members', color: '#4A90D9' },
-  { icon: <Globe size={20} />, number: '150+',  label: 'Countries',         color: '#6C63FF' },
-  { icon: <Star size={20} />,  number: '5K+',   label: 'Discord Members',   color: '#27ae60' },
-  { icon: <Zap size={20} />,   number: '99.9%', label: 'Uptime',            color: '#e67e22' },
-]
+
 
 export default function Links() {
   const [dbLinks, setDbLinks] = useState([])
@@ -43,7 +49,7 @@ export default function Links() {
     <main>
       <div className="page-header">
         <h1>Useful Links</h1>
-        <p>Everything you need to connect with the FCFC ecosystem — all in one place.</p>
+        <p><TypeAnimation sequence={['Everything you need to connect with the FCFC ecosystem — all in one place.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       {/* Stats */}
@@ -55,7 +61,9 @@ export default function Links() {
                 <div className="stat-icon" style={{ background: `${s.color}15` }}>
                   <span style={{ color: s.color }}>{s.icon}</span>
                 </div>
-                <div className="stat-number">{s.number}</div>
+                <div className="stat-number">
+                  <CountUp end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} duration={2.2} enableScrollSpy scrollSpyOnce />
+                </div>
                 <div className="stat-label">{s.label}</div>
               </div>
             ))}

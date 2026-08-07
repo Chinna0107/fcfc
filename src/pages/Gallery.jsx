@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState, useEffect } from 'react'
 import { X, ZoomIn } from 'lucide-react'
 import couponImg from '../assets/coupon-sample.png'
@@ -36,7 +37,7 @@ export default function Gallery() {
     <main>
       <div className="page-header">
         <h1>Gallery</h1>
-        <p>A visual journey through the Fortune Crowd Fund Coupon ecosystem.</p>
+        <p><TypeAnimation sequence={['A visual journey through the Fortune Crowd Fund Coupon ecosystem.', 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

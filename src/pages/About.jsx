@@ -1,4 +1,15 @@
+import { TypeAnimation } from 'react-type-animation'
+import CountUpModule from 'react-countup'
 import { Shield, Zap, Globe, Users, Award, Target, MapPin, Briefcase, Star, BadgeCheck } from 'lucide-react'
+
+const CountUp = CountUpModule.default ?? CountUpModule
+
+const stats = [
+  { end: 2500, suffix: '+', label: 'Happy Supporters' },
+  { end: 18000, suffix: '+', label: 'Coupons Shared' },
+  { prefix: '₹', end: 3.25, suffix: ' Cr+', decimals: 2, label: 'Funds Raised' },
+  { end: 650, suffix: '+', label: 'Dreams Supported' },
+]
 import logo from '../assets/logo.png'
 import ceoImg from '../assets/ceo.png'
 import signImg from '../assets/sign.png'
@@ -22,12 +33,14 @@ export default function About() {
         <div className="about-header-inner">
           <div className="about-header-content">
             <h1>About FCFC</h1>
-            <p>Self Crowd-Fund through coupon-based support — raise your dream with your network.</p>
+            <p><TypeAnimation sequence={['Self Crowd-Fund through coupon-based support — raise your dream with your network.', 4000]} speed={55} repeat={Infinity} /></p>
             <div className="about-header-stats">
-              {[['2,500+', 'Happy Supporters'], ['18,000+', 'Coupons Shared'], ['₹3.25 Cr+', 'Funds Raised'], ['650+', 'Dreams Supported']].map(([n, l]) => (
-                <div key={l} className="about-header-stat">
-                  <div className="about-header-stat-num">{n}</div>
-                  <div className="about-header-stat-label">{l}</div>
+              {stats.map(s => (
+                <div key={s.label} className="about-header-stat">
+                  <div className="about-header-stat-num">
+                    <CountUp prefix={s.prefix ?? ''} end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} duration={2.2} enableScrollSpy scrollSpyOnce />
+                  </div>
+                  <div className="about-header-stat-label">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -54,10 +67,12 @@ export default function About() {
                 Our ecosystem focuses on impact: one coupon can multiply support across a community, turning individual contributions into measurable, collective progress.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
-                {[['2,500+', 'Happy Supporters'], ['18,000+', 'Coupons Shared'], ['₹3.25 Cr+', 'Funds Raised'], ['650+', 'Dreams Supported']].map(([n, l]) => (
-                  <div key={l} className="neu-card" style={{ padding: '20px 24px', textAlign: 'center' }}>
-                    <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--navy)' }}>{n}</div>
-                    <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 4 }}>{l}</div>
+                {stats.map(s => (
+                  <div key={s.label} className="neu-card" style={{ padding: '20px 24px', textAlign: 'center' }}>
+                    <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--navy)' }}>
+                      <CountUp prefix={s.prefix ?? ''} end={s.end} suffix={s.suffix} decimals={s.decimals ?? 0} duration={2.2} enableScrollSpy scrollSpyOnce />
+                    </div>
+                    <div style={{ fontSize: 13, color: 'var(--text-muted)', marginTop: 4 }}>{s.label}</div>
                   </div>
                 ))}
               </div>

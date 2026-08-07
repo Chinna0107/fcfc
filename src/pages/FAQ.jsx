@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { ChevronDown, HelpCircle, MessageCircle, Play } from 'lucide-react'
 import faqVideo from '../assets/faq-video.mp4'
@@ -69,7 +70,7 @@ export default function FAQ() {
             <HelpCircle size={14} /> Help Center
           </div>
           <h1>Frequently Asked Questions</h1>
-          <p>Everything you need to know about FCFC and coupon-powered support.</p>
+          <p><TypeAnimation sequence={['Everything you need to know about FCFC and coupon-powered support.', 4000]} speed={55} repeat={Infinity} /></p>
           <div className="faq-hero-stats">
             {[['50+', 'Questions Answered'], ['24/7', 'Support Available'], ['38K+', 'Community Members']].map(([n, l]) => (
               <div key={l} className="faq-hero-stat">

@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, MessageSquare, Clock } from 'lucide-react'
 import locationImg from '../assets/locations.jpeg'
@@ -25,7 +26,7 @@ export default function Contact() {
     <main>
       <div className="page-header">
         <h1>Contact Us</h1>
-        <p>Have a question about FCFC? We're here to help.</p>
+        <p><TypeAnimation sequence={["Have a question about FCFC? We're here to help.", 4000]} speed={55} repeat={Infinity} /></p>
       </div>
 
       <section className="section">

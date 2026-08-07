@@ -1,3 +1,4 @@
+import { TypeAnimation } from 'react-type-animation'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RefreshCw, ChevronRight, ChevronLeft, Check, Loader, CheckCircle, Calendar } from 'lucide-react'
@@ -63,7 +64,7 @@ export default function RenewCoupon() {
       <main>
         <div className="page-header">
           <h1>Renew Coupon</h1>
-          <p>Extend the validity of an existing coupon.</p>
+          <p><TypeAnimation sequence={['Extend the validity of an existing coupon.', 4000]} speed={55} repeat={Infinity} /></p>
         </div>
         <section className="section">
           <div className="page-wrapper">

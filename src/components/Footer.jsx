@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
-            <img src={logo} alt="FCFC" style={{ height: 36, filter: 'brightness(0) invert(1)' }} />
+            <img src={logo} alt="FCFC" style={{ height: 56, filter: 'brightness(0) invert(1)' }} />
             <span style={{ fontSize: 20, fontWeight: 800, color: '#fff' }}>FCFC</span>
           </div>
           <p>The next-generation coupon platform. Create, manage, and track coupons with blockchain-powered transparency.</p>
