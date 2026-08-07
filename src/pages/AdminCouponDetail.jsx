@@ -50,7 +50,7 @@ export default function AdminCouponDetail() {
         <ArrowLeft size={14} /> Back to Coupons
       </button>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+      <div className="adm-coupon-detail-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
 
         {/* Coupon Info */}
         <div className="adm-card" style={{ gridColumn: '1 / -1' }}>

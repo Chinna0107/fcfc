@@ -66,7 +66,7 @@ export default function AdminAllCoupons() {
   return (
     <AdminLayout title="All Coupons" subtitle="Click any coupon to view full history">
       {/* Type filter cards */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 8 }}>
+      <div className="adm-type-filter-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 8 }}>
         {TYPE_FILTERS.map(f => (
           <div
             key={f.key}

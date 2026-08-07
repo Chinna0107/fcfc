@@ -97,7 +97,7 @@ export default function AdminLayout({ children, title, subtitle }) {
             </div>
           </div>
           <button className="adm-logout-topbar-btn" onClick={handleLogout}>
-            <LogOut size={15} /> Logout
+            <LogOut size={15} /> <span>Logout</span>
           </button>
         </div>
 

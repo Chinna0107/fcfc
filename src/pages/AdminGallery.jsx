@@ -148,10 +148,12 @@ export default function AdminGallery() {
         <div className="adm-gallery-grid">
           {filtered.map((p, i) => (
             <div key={`${p.id ?? i}`} className="adm-gallery-item">
-              <img src={p.src} alt={p.caption} onClick={() => setActive(p)} />
-              <div className="adm-gallery-overlay" onClick={() => setActive(p)}>
-                <ZoomIn size={20} color="#fff" />
-                <span>{p.caption}</span>
+              <div style={{ position: 'relative', cursor: 'pointer' }} onClick={() => setActive(p)}>
+                <img src={p.src} alt={p.caption} />
+                <div className="adm-gallery-overlay">
+                  <ZoomIn size={20} color="#fff" />
+                  <span>{p.caption}</span>
+                </div>
               </div>
               <div className="adm-gallery-meta">
                 <span className="adm-badge badge-blue">{p.category}</span>
