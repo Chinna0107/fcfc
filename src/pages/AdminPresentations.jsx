@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react'
 import { Monitor, Play, X, Plus, Trash2, Edit2, Check, RefreshCcw, Upload, FileText } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 const CATEGORIES = ['All', 'Overview', 'Education', 'Support', 'General']
 const BLANK = { title: '', description: '', category: 'General' }
 

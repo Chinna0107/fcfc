@@ -9,7 +9,7 @@ import addressImg   from '../assets/address.jpeg'
 import locationsImg from '../assets/locations.jpeg'
 import imageImg     from '../assets/image.png'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 const STATIC_PHOTOS = [
   { id: 's1', src: couponImg,    caption: 'FCFC Coupon Sample',    category: 'Product' },

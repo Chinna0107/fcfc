@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { RefreshCcw, Ticket, ChevronRight, CheckCircle, XCircle, AlertCircle, DollarSign, Send, RefreshCw } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 const statusMap = {
   active:   { cls: 'badge-green',  icon: <CheckCircle size={12} />,  label: 'Active' },

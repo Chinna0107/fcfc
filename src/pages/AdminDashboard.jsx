@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { Ticket, DollarSign, ClipboardList, Users, RefreshCcw } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 function StatCard({ icon: Icon, label, value, color, prefix = '' }) {
   return (

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { ExternalLink, Globe, BookOpen, FileText, MessageCircle, Share2, Video, GitBranch, Link2, Edit2, Check, X, Trash2, Plus, RefreshCcw } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 const ICON_MAP = { Globe, BookOpen, FileText, MessageCircle, Share2, Video, GitBranch, Link2 }
 const CATEGORIES = ['All', 'Featured', 'Community', 'Developer', 'General']

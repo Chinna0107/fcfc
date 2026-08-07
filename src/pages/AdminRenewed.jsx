@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react'
 import { RefreshCcw } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 export default function AdminRenewed() {
   const [renewed, setRenewed] = useState([])

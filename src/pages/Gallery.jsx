@@ -24,7 +24,7 @@ export default function Gallery() {
   const [dbPhotos, setDbPhotos] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/gallery')
+    fetch(import.meta.env.VITE_API_URL + '/api/admin/gallery')
       .then(r => r.json())
       .then(data => setDbPhotos(Array.isArray(data) ? data.map(p => ({ src: p.image_url, caption: p.caption })) : []))
       .catch(() => {})

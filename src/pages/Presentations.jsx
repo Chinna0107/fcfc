@@ -13,7 +13,7 @@ export default function Presentations() {
   const [items, setItems] = useState(STATIC)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/presentations')
+    fetch(import.meta.env.VITE_API_URL + '/api/admin/presentations')
       .then(r => r.json())
       .then(data => setItems(prev => [
         ...(Array.isArray(data) ? data : []),

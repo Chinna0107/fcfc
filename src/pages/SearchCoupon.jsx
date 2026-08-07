@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Search, Ticket, CheckCircle, XCircle, Clock, Loader } from 'lucide-react'
 import './SearchCoupon.css'
 
-const API = 'http://localhost:5000/api/general'
+const API = import.meta.env.VITE_API_URL + '/api/general'
 
 export default function SearchCoupon() {
   const [query, setQuery] = useState('')

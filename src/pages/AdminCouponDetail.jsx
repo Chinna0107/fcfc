@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Ticket, RefreshCw, Send, Calendar, Clock, CheckCircle, XCircle, AlertCircle, CreditCard } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
-const API = 'http://localhost:5000/api/admin'
+const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 const StatusBadge = ({ status }) => {
   const map = {

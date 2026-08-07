@@ -5,7 +5,7 @@ import StepIndicator from '../components/StepIndicator'
 import coinImg from '../assets/coin.png'
 import './RenewCoupon.css'
 
-const API = 'http://localhost:5000/api/general'
+const API = import.meta.env.VITE_API_URL + '/api/general'
 const steps = ['Find Coupon', 'Payment', 'Review & Renew']
 
 export default function RenewCoupon() {

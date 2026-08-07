@@ -34,7 +34,7 @@ export default function Links() {
   const [dbLinks, setDbLinks] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/links')
+    fetch(import.meta.env.VITE_API_URL + '/api/admin/links')
       .then(r => r.json())
       .then(data => setDbLinks(Array.isArray(data) ? data : []))
       .catch(() => {})
