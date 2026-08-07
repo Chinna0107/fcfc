@@ -1,29 +1,19 @@
-import { useEffect, useState, useCallback } from 'react'
+import { useState } from 'react'
+import { useFetch } from '../hooks/useFetch'
 import { RefreshCcw } from 'lucide-react'
 import AdminLayout from './AdminLayout'
 
 const API = import.meta.env.VITE_API_URL + '/api/admin'
 
 export default function AdminCoupons() {
-  const [coupons, setCoupons] = useState([])
-  const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState('')
-
-  const fetchData = useCallback(async () => {
-    setLoading(true)
-    try {
-      const data = await fetch(`${API}/coupons`).then(r => r.json())
-      setCoupons(Array.isArray(data) ? data : [])
-    } catch {
-      setCoupons(JSON.parse(localStorage.getItem('generatedCoupons') || '[]'))
-    }
-    setLoading(false)
-  }, [])
-
-  useEffect(() => { fetchData() }, [fetchData])
+  const { data, loading, refresh } = useFetch(`${API}/coupons`, {
+    fallback: JSON.parse(localStorage.getItem('generatedCoupons') || '[]'),
+    transform: d => Array.isArray(d) ? d : [],
+  })
+  const coupons = data || []
 
   const fmt = d => d ? new Date(d).toLocaleString() : '—'
-
   const filtered = coupons.filter(c =>
     !search || c.code?.toLowerCase().includes(search.toLowerCase()) || c.email?.toLowerCase().includes(search.toLowerCase())
   )
